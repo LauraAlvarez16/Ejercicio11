@@ -14,11 +14,31 @@
 
 <body>
     <div class="container-fluid">
-        <div class="cronometro">
+        <h1>Cronometro</h1>
+        <div class="cronometro col-md-4 col-md-offset-4">
             <div class="tablero">
                 <p id="tablero">00:00:0</p>
             </div>
-            <div class="botones">
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4">
+                        HORA
+                        <input class="form-control"  type="number" id="h" value="0" min="0" max="60">
+                    </div>
+                    <div class="col-md-4">
+                        MINUTOS
+                        <input class="form-control" type="number" value="m" value="1" min="0" max="60" id="m">
+                    </div>
+                    <div class="col-md-4">
+                        SEGUNDOS
+                        <input type="number" class="form-control" min="0" max="60" value="60" id="s">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="botones col-md-12">
                 <button id="boton_play">Play</button>
                 <button id="boton_pause">Pause</button>
                 <button id="boton_reset">Reset</button>
