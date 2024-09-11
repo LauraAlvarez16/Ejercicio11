@@ -3,12 +3,12 @@ let tablero = document.getElementById("tablero");
 let boton_play = document.getElementById("boton_play");
 let boton_pause = document.getElementById("boton_pause");
 let boton_reset = document.getElementById("boton_reset");
-let text_hora = document.getElementById("h");
+let text_decimas = document.getElementById("d");
 let text_minuto = document.getElementById("m");
 let text_segundo = document.getElementById("s");
 
 // Estados Cronometro
-let esta_activo = false; 
+let esta_activo = false;
 let time = { //variable de tipo objeto
     decimas: 0,
     segundos: 0,
@@ -35,8 +35,11 @@ function actualizar() {
         time.segundos = 0;
         time.minutos++;
     }
-    tablero.innerHTML = `${formato(time.minutos)}:${formato(time.segundos)}:${time.decimas}` //se modifica el formato html por el valor que esta ahi 0:0:1
-    
+    tablero.innerHTML = `${formato(time.minutos)}:${formato(time.segundos)}:${time.decimas}`;//se modifica el formato html por el valor que esta ahi 0:0:1
+    text_decimas.innerHTML = `${time.decimas}`;
+    text_segundo.innerHTML = `${formato(time.segundos)}`;
+    text_minuto.innerHTML = `${formato(time.minutos)}`;
+
     if (esta_activo == true) {
         setTimeout(actualizar, 100); //Esperar un intervalo de tiempo y volver a ingresar a la función
     }
@@ -56,8 +59,11 @@ function reset() {//Restablece lo que inicialmente se tenia en el tableri
     time.decimas = 0;
     time.segundos = 0;
     time.minutos = 0;
-    tablero.innerHTML = `${formato(time.minutos)}:${formato(time.segundos)}:${time.decimas}
-    `}
+    tablero.innerHTML = `${formato(time.minutos)}:${formato(time.segundos)}:${time.decimas}`;
+    text_decimas.innerHTML = `${ time.decimas } `;
+    text_segundo.innerHTML = `${ formato(time.segundos) } `;
+    text_minuto.innerHTML = `${ formato(time.minutos) } `;
+    }
 // Escuchar Eventos
 boton_play.addEventListener('click', play);
 boton_pause.addEventListener('click', pause);

@@ -93,7 +93,7 @@ body{
     text-align: center;
 }
 
-.mostrar input{
+.mostrar .form-control{
     height: 40px;
     width: 90%;
     outline: none;
